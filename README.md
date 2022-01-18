@@ -1,7 +1,13 @@
 my_mlops
 ==============================
 
-ML ops
+- Pytorch lightning has been used (see src/models/model.py and src/models/mnist_data_loader.py)
+- Very simple test using pytest
+- wandb and dvc has been set up
+- flake8 and isort has been tested
+- requirements has been fixed to eliminate transitive dependencies
+- the Makefile has been updated to push deploy locally, deploy in cluster hosted by google
+- a deploy folder has been created with a .yaml for kubernetes deployment
 
 Project Organization
 ------------

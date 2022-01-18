@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: model-serve # Label for the Deployment
+  name: model-serve # Name of Deployment
+spec:
+  selector:
+    matchLabels:
+      run: model-serve
+  template: # Pod template
+    metadata:
+      labels:
+        run: model-serve # Labels Pods from this Deployment
+    spec: # Pod specification; each Pod created by this Deployment has this specification
+      containers:
+      - image: $IMG_NAME
+        name: hostname # Container name
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        livenessProbe:
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          httpGet:
+            path: /ping
+            port: 8080
+        readinessProbe:
+          initialDelaySeconds: 30
+          periodSeconds: 20
+          httpGet:
+            path: /ping
+            port: 8080
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: model-serve-svc # Name of Service
+  annotations:
+    cloud.google.com/neg: '{"ingress": true}' # Creates a NEG after an Ingress is created
+spec: # Service's specification
+  type: ClusterIP
+  selector:
+    run: model-serve # Selects Pods labelled run: model-serve
+  ports:
+  - name: http
+    port: 80 # Service's port
+    protocol: TCP
+    targetPort: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: model-serve-ing
+spec:
+  defaultBackend:
+    service:
+      name: model-serve-svc # Name of the Service targeted by the Ingress
+      port:
+        number: 80 # Should match the port used by the Service

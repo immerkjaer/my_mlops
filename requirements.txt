@@ -1,10 +1,106 @@
 # local package
 -e .
 
+--find-links https://download.pytorch.org/whl/torch_stable.html
+
 # external requirements
-click
-Sphinx
-coverage
-awscli
-flake8
-python-dotenv>=0.5.1
+click==8.0.3
+wandb==0.12.9
+torch==1.10.1+cpu
+torchaudio==0.10.1+cpu
+torchvision==0.11.2+cpu
+pytorch-lightning==1.5.8
+dvc==2.9.3
+dvc[gs]
+hydra-core==1.1.1
+# matplotlib
+
+# external requirements
+# alabaster==0.7.12
+# arrow==1.2.1
+# awscli==1.22.27
+# Babel==2.9.1
+# backcall==0.2.0
+# backports.functools-lru-cache==1.6.4
+# binaryornot==0.4.4
+# black==21.12b0
+# botocore==1.23.27
+# certifi==2021.10.8
+# chardet==4.0.0
+# charset-normalizer==2.0.9
+# click==8.0.3
+# colorama==0.4.3
+# cookiecutter==1.7.3
+# coverage==6.2
+# cycler==0.11.0
+# debugpy==1.5.1
+# decorator==5.1.0
+# docutils==0.15.2
+# entrypoints==0.3
+# flake8==4.0.1
+# fonttools==4.25.0
+# idna==3.3
+# imagesize==1.3.0
+# ipykernel==6.6.0
+# ipython==7.30.1
+# isort==5.10.1
+# jedi==0.18.1
+# Jinja2==3.0.3
+# jinja2-time==0.2.0
+# jmespath==0.10.0
+# jupyter-client==7.1.0
+# jupyter-core==4.9.1
+# kiwisolver==1.3.1
+# MarkupSafe==2.0.1
+# matplotlib==3.5.0
+# matplotlib-inline==0.1.3
+# mccabe==0.6.1
+# mkl-fft==1.3.1
+# mkl-random==1.2.2
+# mkl-service==2.4.0
+# munkres==1.1.4
+# mypy==0.930
+# mypy-extensions==0.4.3
+# nest-asyncio==1.5.4
+# numpy==1.21.2
+# olefile==0.46
+# packaging==21.3
+# pandas==1.2.5
+# parso==0.8.3
+# pathspec==0.9.0
+# pexpect==4.8.0
+# pickleshare==0.7.5
+# Pillow==8.4.0
+# pip==21.3.1
+# platformdirs==2.4.1
+# poyo==0.5.0
+# prompt-toolkit==3.0.24
+# ptyprocess==0.7.0
+# pyasn1==0.4.8
+# pycodestyle==2.8.0
+# pyflakes==2.4.0
+# Pygments==2.11.1
+# pyparsing==3.0.4
+# python-dateutil==2.8.2
+# python-dotenv==0.19.2
+# python-slugify==5.0.2
+# pytz==2021.3
+# PyYAML==5.4.1
+# pyzmq==19.0.2
+# requests==2.27.0
+# rsa==4.7.2
+# s3transfer==0.5.0
+# setuptools==60.2.0
+# sip==6.5.0
+# six==1.16.0
+# snowballstemmer==2.2.0
+# Sphinx==4.3.2
+# text-unidecode==1.3
+# tomli==1.2.3
+# torchaudio==0.10.1
+# tornado==6.1
+# traitlets==5.1.1
+# typing-extensions==3.10.0.2
+# urllib3==1.26.7
+# wcwidth==0.2.5
+# wheel==0.37.1
